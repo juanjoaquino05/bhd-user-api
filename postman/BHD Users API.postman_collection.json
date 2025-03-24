@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "b14cca0d-1c3d-4de9-b6ea-a670a8fcd34d",
+		"name": "BHD Users API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3873601"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "room",
+						"value": "1",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Juan Henriquez\",\n    \"password\": \"JuanHenriquez12*\",\n    \"email\": \"adasdsdfsdfaasdasdadn@Henrisdquez.sssd\",\n    \"phones\": [\n        {\n            \"number\": \"1234567\",\n            \"cityCode\": \"1\",\n            \"countryCode\": \"57\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}:{{port}}/signup",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
