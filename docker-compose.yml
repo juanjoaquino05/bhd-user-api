@@ -1,0 +1,36 @@
+
+services:
+  app:
+    image: 'bhd-user-api:latest'
+    build:
+      context: .
+    container_name: app
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/bhd_users
+      - SPRING_DATASOURCE_HOST=db
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
+      - SPRING_DATASOURCE_USERNAME=user_su
+      - SPRING_DATASOURCE_PASSWORD=my-secret-su-pw
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_SHOW_SQL=true
+    ports:
+      - "8085:8085"
+  db:
+    image: 'mysql:8.4'
+    container_name: db
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_DATABASE=bhd_users
+      - MYSQL_USER=user_su
+      - MYSQL_PASSWORD=my-secret-su-pw
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
