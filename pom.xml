@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.bhd</groupId>
 	<artifactId>user-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>User API Service</name>
 	<description>This is a REST service API intended to be used only for interview evaluation purposes.</description>
 	<url/>
