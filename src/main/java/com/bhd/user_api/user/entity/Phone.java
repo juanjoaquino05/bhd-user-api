@@ -20,6 +20,4 @@ public class Phone {
     private String number;
     private String cityCode;
     private String countryCode;
-    private Date created;
-    private Date modified;
 }

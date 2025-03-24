@@ -2,6 +2,7 @@ package com.bhd.user_api.user.dto.request;
 
 import com.bhd.user_api.user.entity.Phone;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.Email;
 import lombok.Getter;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class CreateUserRequest {
     @JsonProperty(value = "name", required = true)
     private String name;
 
+    @Email(message = "Invalid email")
     @JsonProperty(value = "email", required = true)
     private String email;
 
