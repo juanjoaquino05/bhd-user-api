@@ -21,6 +21,7 @@ public class UserMapper {
                 .id(user.getId().toString())
                 .name(user.getName())
                 .email(user.getEmail())
+                .token(user.getToken())
                 .phones(user.getPhones().stream().map(UserMapper::toPhoneDTO).toList())
                 .build();
     }

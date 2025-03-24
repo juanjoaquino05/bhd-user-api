@@ -19,6 +19,9 @@ public class CreateUserResponse {
     @JsonProperty(value = "email")
     private String email;
 
+    @JsonProperty(value = "token")
+    private String token;
+
     @JsonProperty(value = "phones")
     private List<PhoneDTO> phones;
 
