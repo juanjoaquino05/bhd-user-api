@@ -27,6 +27,8 @@ Follow these steps to run the Application.
     docker-compose up
 ```
 
+4. Test with the included postman collection. (check the postman folder and import the collection and environment)
+
 If there is a problem running the program be sure you have installed and configured Docker correctly. (if not, open an issue in this repo)
 
 
