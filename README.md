@@ -20,17 +20,8 @@ Follow these steps to run the Application.
     # Windows
     mvnw.cmd clean package -Dmaven.test.skip
 ```
-./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=juanjoaquino05/bhd-user-api
-3. Build Docker Image.
-```bash 
-    # Linux, MacOS
-    ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=juanjoaquino05/bhd-user-api
-    
-    # Windows
-    mvnw.cmd spring-boot:build-image -Dspring-boot.build-image.imageName=juanjoaquino05/bhd-user-api
-```
 
-4. Run the following command:
+3. Run the following command:
 ```bash
     # Linux, Mac, Windows
     docker-compose up
