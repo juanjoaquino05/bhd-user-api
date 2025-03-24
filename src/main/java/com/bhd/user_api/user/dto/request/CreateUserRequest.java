@@ -2,14 +2,15 @@ package com.bhd.user_api.user.dto.request;
 
 import com.bhd.user_api.user.entity.Phone;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Getter
+@Setter
 public class CreateUserRequest {
 
     @NotEmpty(message = "Nombre no puede ser vacio")
@@ -21,6 +22,10 @@ public class CreateUserRequest {
     @JsonProperty(value = "email", required = true)
     private String email;
 
+    @Pattern(
+        regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
+        message = "La clave debe tener al menos 8 caracteres, incluir una letra mayuscula, una letra minuscula, un numero y un caracter especial."
+    )
     @NotEmpty(message = "Clave no puede ser vacio")
     @JsonProperty(value = "password", required = true)
     private String password;
